@@ -11,3 +11,11 @@
  * @param {string[]} namesList - An array of names to be capitalized.
  * @returns {string[]} An array of names with the first letter capitalized and the rest in lowercase.
  */
+function capitalizeMates(namesList) {
+  return namesList.map(name => {
+    if (!name) return name;
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  });
+}
+
+module.exports = capitalizeMates;
