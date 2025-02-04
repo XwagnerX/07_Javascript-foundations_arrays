@@ -1,3 +1,6 @@
+import { describe, it, expect } from "vitest";
+import { getTotalVoters } from "./getTotalVoters";
+
 const VOTERS = [
   { name: "Bob", age: 30, hasVoted: true },
   { name: "Jake", age: 32, hasVoted: true },
@@ -35,16 +38,30 @@ const EMPTY_VOTERS = [];
 
 const SINGLE_NON_VOTER = [{ name: "Kate", age: 25, hasVoted: false }];
 
+const SINGLE_VOTER = [{ name: "Bob", age: 30, hasVoted: true }];
+
 describe("getTotalVoters", () => {
-  it.todo("should return the correct number of voters");
+  it("should return the correct number of voters", () => {
+    expect(getTotalVoters(VOTERS)).toBe(7);
+  });
 
-  it.todo("should return 0 when no one has voted");
+  it("should return 0 when no one has voted", () => {
+    expect(getTotalVoters(EMPTY_VOTERS)).toBe(0);
+  });
 
-  it.todo("should return the correct number when all have voted");
+  it("should return the correct number when all have voted", () => {
+    expect(getTotalVoters(ALL_VOTERS)).toBe(7);
+  });
 
-  it.todo("should handle an empty array");
+  it("should handle an empty array", () => {
+    expect(getTotalVoters(EMPTY_VOTERS)).toBe(0);
+  });
 
-  it.todo("should handle an array with one voter who has voted");
+  it("should handle an array with one voter who has voted", () => {
+    expect(getTotalVoters(SINGLE_VOTER)).toBe(1);
+  });
 
-  it.todo("should handle an array with one voter who has not voted");
+  it("should handle an array with one voter who has not voted", () => {
+    expect(getTotalVoters(SINGLE_NON_VOTER)).toBe(0);
+  });
 });

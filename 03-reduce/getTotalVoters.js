@@ -27,4 +27,8 @@
  * @returns {number} The total number of voters who have voted.
  */
 
-export default getTotalVoters;
+function getTotalVoters(votersList) {
+  return votersList.reduce((acc, voter) => acc + (voter.hasVoted ? 1 : 0), 0);
+}
+
+export { getTotalVoters };

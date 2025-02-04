@@ -11,3 +11,19 @@
  * @param {number} initialAccumulatedValue - The initial value to start the accumulation from.
  * @returns {number} The total sum of the numbers in the list starting from the initial accumulated value.
  */
+
+// function sumNumbersFromInitialValue(numbersList, initialAccumulatedValue) {
+//     let sum = initialAccumulatedValue;
+//     for (let i = 0; i < numbersList.length; i++) {
+//       sum += numbersList[i];
+//     }
+//     return sum;
+//   }
+ 
+
+function sumNumbersFromInitialValue(numbersList, initialAccumulatedValue) {
+    return numbersList.reduce((acc, number) => acc + number, initialAccumulatedValue);
+}
+
+
+module.exports = sumNumbersFromInitialValue;
